@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<script type="text/javascript">
+/* <![CDATA[ */
+
+// function addGuest(){
+// var guestInfo = document.newGuest.guestName.value + ", ";
+// guestInfo += document.newGuest.relationship.value;
+// document.newGuest.guests.value = guestInfo;
+// }
+
+function addGuest(name, relationship) {
+var guestInfo = name + ", ";
+guestInfo += relationship;
+return guestInfo;
+}
+
+
+/* ]]> */
+</script>	
+</head>
+
+
+<body>
+
+<div id="bgimage"></div>
+
+<div id="divhead">
+	<img src="image.png" width="30px" height="30px" style="margin-left: 30px"> Guestbook.
+</div>
+
+<div id="divleft">
+<form action="" id="newGuest" method="post" name="newGuest">
+<p>
+Guest
+<input type="text" name="guestName" style="width: 240px" />&nbsp;
+<br />
+
+Relationship
+<input type="text" name="relationship" style="width: 210px" />
+<input type="button" onclick="var newGuest=addGuest(document.newGuest.guestName.value, document.newGuest.relationship.value);
+document.newGuest.guests.value=newGuest" value="Add Guest" />
+</p>
+
+<p>
+<textarea name="guests"></textarea>
+</p>
+
+</form>
+
+</div>
+
+<div id="divright">
+	<ul>
+		<li><u> <a href="index.html">Wedding </a> </u></li>
+		<li><u><a href="guestbook.html"> Guestbook </a> </u></li>
+	</ul>
+</div>
+
+
+</body>
+</html>
