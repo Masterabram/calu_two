@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Stanford University</title>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<script type="text/javascript">
+/* <![CDATA[ */
+
+// start of my function
+function calculatetuition(){
+	var name = document.calu.name.value;
+	var semester = document.calu.semester.value;
+	var residence = document.calu.residence.value;
+	var credit = document.calu.credits.value;
+	var subtotal = semester + residence;
+	var total = subtotal * credit
+
+	var display1 = 'Hello ' + name ;
+	var display2 = 'Your semester fee is: ' + semester ;
+	var display3 = ' and your residence fee is: ' + residence ;
+	var display4 = ' That total of the Tuition fee is : ' + total ;
+	var display = display1 + display2 + display3 + display4 ;
+
+	alert(display);
+}
+
+// end of my function
+/* ]]> */
+</script>	
+</head>
+
+
+<body>
+
+<div class="main " >
+	<div class="container">
+		<div id="centerheader">			
+			<h1> Stanford University </h1>
+			<h2> Tuition Calculator </h2>
+
+
+	    	<div id="navigation">
+	        <ul>
+	            <li><a  href="index.html"> Tuition Calculator <div class="ripple-wrapper"></div></a>
+	            </li>
+	            <li><a  href="#">Home</a>
+	            </li>
+	            <li><a  href="#">About</a>
+	            </li>
+	        </ul>
+	    	</div>
+	  </div>
+                         
+  <div id="center">	
+
+  <!-- start of the form -->
+	<form action="" method="POST" name="calu">
+		<table style="width: 400px;">
+			<tr>
+				<td>
+					<label> Name </label> <br />
+					<input type="text" id="name" name="name">
+				</td>
+			</tr>		
+			<tr>
+				<td>
+					<label> Choose your semester </label> <br />
+					<input type="radio" id="Semster" name="semester" value="100"  > Semster 1 <br />
+					<input type="radio" id="Semster" name="semester" value="200"  > Semster 2 <br />
+					<input type="radio" id="Semster" name="semester" value="300"  > Semster 3 <br />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label> choose your residency status </label> <br />
+					<input type="radio" name="residence" value="50"  > in-state <br />
+					<input type="radio" name="residence" value="70"  > Out-of-state<br />
+					<input type="radio" name="residence" value="90"  > International <br />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label> Number of credits </label> <br />
+					<input type="number" id="credits" name="credits">
+				</td>
+			</tr>				
+			<tr>
+				<td> 
+				     <!-- calling the fuction unside the onclick event -->
+					<input type="submit" onclick="calculatetuition()" name="submit" value="Calculate Your Tuition ">  <br />
+				</td>
+			</tr>				
+		</table>
+	</form>
+
+<!-- end of the form -->
+
+	</div>
+  </div>	
+  </div>
+</body>
+</html>

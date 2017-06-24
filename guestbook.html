@@ -1,7 +1,7 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title></title>
+	<title> Guest book </title>
 
 <link rel="stylesheet" type="text/css" href="style.css">
 
@@ -14,12 +14,14 @@
 // document.newGuest.guests.value = guestInfo;
 // }
 
+/* a javascript fuction with parameters */
+
 function addGuest(name, relationship) {
 var guestInfo = name + ", ";
-guestInfo += relationship;
+guestInfo += relationship + "\r";
 return guestInfo;
 }
-
+/* end of fuction  */
 
 /* ]]> */
 </script>	
@@ -31,10 +33,11 @@ return guestInfo;
 <div id="bgimage"></div>
 
 <div id="divhead">
-	<img src="image.png" width="30px" height="30px" style="margin-left: 30px"> Guestbook.
+	<img src="image.png" alt="" width="30px" height="30px" style="margin-left: 30px"> Guestbook.
 </div>
 
 <div id="divleft">
+<!-- start of the form -->
 <form action="" id="newGuest" method="post" name="newGuest">
 <p>
 Guest
@@ -43,8 +46,7 @@ Guest
 
 Relationship
 <input type="text" name="relationship" style="width: 210px" />
-<input type="button" onclick="var newGuest=addGuest(document.newGuest.guestName.value, document.newGuest.relationship.value);
-document.newGuest.guests.value=newGuest" value="Add Guest" />
+<input type="button" onclick="var newGuest=addGuest(document.newGuest.guestName.value,document.newGuest.relationship.value);document.newGuest.guests.value=document.newGuest.guests.value + newGuest" value="Add Guest" />
 </p>
 
 <p>
@@ -52,16 +54,16 @@ document.newGuest.guests.value=newGuest" value="Add Guest" />
 </p>
 
 </form>
+<!-- end of the form -->
 
 </div>
-
+<!-- start of the menu -->
 <div id="divright">
 	<ul>
 		<li><u> <a href="index.html">Wedding </a> </u></li>
 		<li><u><a href="guestbook.html"> Guestbook </a> </u></li>
 	</ul>
 </div>
-
-
+<!-- end of the menu -->
 </body>
 </html>

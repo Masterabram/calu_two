@@ -1,19 +1,50 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Metric Prefixes</title>
 <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
 <link rel="stylesheet" href="js_styles.css" type="text/css" />
+
+<style type="text/css">
+	
+/*start of the style */
+.main{
+  margin-left: 100px;
+  margin-bottom: 100px;
+  margin-top: 50px;
+  margin-right: 100px;
+}
+
+
+#centerheader{
+  text-align: center;
+  margin-left: 600px;
+  float: left;
+}
+
+#center{
+  text-align: left;
+  margin-left: 430px;
+  float: left;
+}
+
+/*end of style*/
+</style>
+
+
 </head>
 <body>
 
-	<h1>Metric Prefixes</h1>
+  <div id="centerheader"><h1>Metric Prefixes</h1></div>
+	
 
 </body>
 
 <script type='text/javascript' >
 /* <![CDATA[ */
+
+
+// variables declarations
 	var yotta = 1e24;
 	var zetta = 1e21;
 	var exa = 1e18;
@@ -35,7 +66,11 @@
 	var zepto = 1e-21;
 	var yocto = 1e-24;
 
-	document.write("<table border='1'><tr><th>Prefix</th><th>Decimal Equivalent</th></tr>");
+
+	// generating the table
+
+	document.write("<div id='center' >");
+	document.write("<table border='1' width='600px'><tr><th>Prefix</th><th>Decimal Equivalent</th></tr>");
 	document.write("<tr><td>Yotta</td><td>" + yotta + "</td></tr>");
 	document.write("<tr><td>Zetta</td><td>" + zetta + "</td></tr>");
 	document.write("<tr><td>Exa</td><td>" + exa + "</td></tr>");
@@ -57,6 +92,9 @@
 	document.write("<tr><td>Zepto</td><td>" + zepto + "</td></tr>");
 	document.write("<tr><td>Yocto</td><td>" + yocto + "</td></tr>");
 	document.write("</table>");
+	document.write("</div>");
+
+	// end of table
 
 /* ]]> */
 </script>

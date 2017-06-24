@@ -3,14 +3,60 @@
 <head>
 	<title></title>
 
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="index_style.css">
 
 <script type="text/javascript">
 /* <![CDATA[ */
+	var guestsCost = 0;
+	var limousinesCost = 0;
+	var liveMusicCost = 0;
+	var flowersCost = 0;
+	var totalEstimate = 0;
 
+	var liveMusic = false;
+    var flowers = false;
 
+    // functions to implement the form fields actions
 
+	function calcGuests() {
+		totalEstimate -= guestsCost;
+		guestsCost = document.details.numGuests.value * 65;
+		totalEstimate += guestsCost;
+		document.estimate.cost.value = "$" + totalEstimate;
+	}
 
+	function calcLimousines() { 
+		totalEstimate -= limousinesCost;
+		limousinesCost = document.details.numLimousines.value * 65;
+		totalEstimate += limousinesCost;
+		document.estimate.cost.value = "$" + totalEstimate;
+	}
+
+	function addMusic() {
+	 (liveMusic == false) ? liveMusicCost = 500 : liveMusicCost = 0;
+	  totalEstimate += liveMusicCost;
+	  liveMusic = true;
+	  document.estimate.cost.value = "$" + totalEstimate;
+	}
+	function removeMusic() {
+	(liveMusic == true) ? liveMusicCost = -500 : liveMusicCost = 0;
+	totalEstimate += liveMusicCost; 
+	liveMusic = false;
+	document.estimate.cost.value = "$" + totalEstimate;
+	}
+
+	function addFlowers() {
+	(flowers == false) ? flowersCost = 400 : flowersCost = 0;
+	totalEstimate += flowersCost;
+	flowers = true;
+	document.estimate.cost.value = "$" + totalEstimate;
+	}
+	function removeFlowers() {
+	(flowers == true) ? flowersCost = -400 : flowersCost = 0;
+	totalEstimate += flowersCost;
+	flowers = false;
+	document.estimate.cost.value = "$" + totalEstimate;
+	}
 /* ]]> */
 </script>	
 </head>
@@ -18,24 +64,88 @@
 
 <body>
 
-<div id="bgimage"></div>
-
-<div id="divhead">
-	<img src="image.png" width="30px" height="30px" style="margin-left: 30px"> Guestbook.
+<div id="head">
 </div>
 
 <div id="divleft">
+<h1><div id="divimage"><img src="image.png" width="30px" height="30px" style="margin-left: 30px"> Wedding Planner</h1>
+	<div id="divleft_left">
+		<div id="divimage"><img src="1.jpg" width="200px" height="250px" style="margin-left: 30px"></div>
+	</div>
 
+	<div id="divleft_right">
 
+	<!-- start of the main form -->
+		<form action="" name="details">
+		<table>
+		<tr>
+		<td>
+		<tr>
+		<td>Guests<br />
+		($65 each)</td>
+		<td>
+		<input type="text" name="numGuests" size="3" onchange="calcGuests()" /></td>
+		</tr>
+		<tr>
+		    <td>
+		    	Limousines<br /> ($125 each)
+		    </td>
+			<td>
+				<input type="text" name="numLimousines" size="3" onchange="calcLimousines()" />
+			</td>
+		</tr>
+		<tr>
+		<td>Live music<br /> ($500)</td>
+		<td> 
+			 <input type="radio" name="music" onchange="addMusic()" />Yes
+		     <input type="radio" name="music" checked="checked" onclick="removeMusic()" />No
+		</td>
+		</tr>
+		<tr>
+		 	<td>Flowers<br /> ($400)</td>
+			<td> 
+				<input type="radio" name="flowers" onchange="addFlowers()" />Yes
+				<input type="radio" name="flowers" checked="checked" onchange="removeFlowers()"/>No 
+			</td>
+		</tr>
+		</table>
+		</form>
+		<!-- end of the main form -->
+	</div>
+
+	<div id="divleft_left">
+		<div id="divimage"><img src="2.jpg" width="200px" height="250px" style="margin-left: 30px"></div>
+	</div>
+<!-- start of cost display form -->
+	<div id="divleft_right">
+	 <form action="" name="estimate">
+		<p>
+		Estimated total cost:
+		<input type="text" name="cost" size="5" style="border-style: none; border-color: inherit; border-width: medium; background-color: Transparent" text="0" /></p>
+	 </form>
+	</div>
+<!-- end of cost display form -->
 </div>
 
+<!-- start photo gallery section -->
 <div id="divright">
-	<ul>
-		<li><u> <a href="index.html">Wedding </a> </u></li>
-		<li><u><a href="guestbook.html"> Guestbook </a> </u></li>
-	</ul>
-</div>
+<h1><div id="divimage"><img src="image.png" width="30px" height="30px" style="margin-left: 30px"> Photo gallery</h1>
 
+	<div id="divimage"><img src="3.jpg" width="550px" height="250px" style="margin-left: 30px"></div>
+	<div id="divimage"><img src="2.jpg" width="550px" height="250px" style="margin-left: 30px"></div>
+	<div id="divimage"><img src="1.jpg" width="550px" height="250px" style="margin-left: 30px"></div>
+
+</div>
+<!-- end photo gallery section -->
+
+<!-- start of sidemenu -->
+<div id="sidemenu">
+	<ol>
+		<li><div id="divimage"><img src="image.png" width="30px" height="30px" style="margin-left: 30px"></div><a href="index.html">Wedding </a></li>
+		<li><div id="divimage"><img src="image.png" width="30px" height="30px" style="margin-left: 30px"></div><a href="guestbook.html"> Guestbook </a></li>
+	</ol>
+</div>
+<!-- enc of side menu -->
 
 </body>
 </html>
